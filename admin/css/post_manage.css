@@ -1,0 +1,15 @@
+#user_table{
+	margin-top: 20px;
+}
+#newPostBtn{
+	margin-top: 10px;
+	background-color: black;
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid black;
+	height: 25px;
+	padding: 2px;
+}
+#postContent{
+	padding-top: 10px;
+}

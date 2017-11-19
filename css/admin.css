@@ -1,0 +1,79 @@
+.{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: 'Inconsolata', monospace;
+}
+#rootDiv{
+	padding: 0;
+}
+#banner{
+	height: 100px;
+	color: #fff;
+	background-color: black;
+	text-align: center;
+	padding-top: 30px;
+}
+#fullNameUser::before{
+	color: #fff;
+	content: "Xin chào,";
+}
+#fullNameUser{
+	margin-bottom: 5px;
+	font-size: 130%;
+}
+.bannerBtn{
+	padding: 2px;
+	text-align: center;
+	border-radius: 3px;
+	border: 1px solid #fff;
+}
+p{
+	margin-bottom: 2px;
+	font-size: 15px;
+}
+a{
+	color: #fff;
+}
+a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+a:visited{
+	text-decoration: none;
+	color: #fff;
+}
+a:active{
+	text-decoration: none;
+	color: #fff;
+}
+#menuRow{
+	padding: 0;
+	margin-top: 5px;
+	text-align: center;
+}
+.menuButton{
+	padding: 1px;
+	padding-top: 5px;
+	background-color: black;
+	color: #fff;
+	height: 40px;
+	font-size: 115%;
+}
+.menuButton:hover{
+	background-color: #d3eae1;
+	color: black;
+}
+#admin_content{
+	margin-top: 5px;
+	padding-top: 30px;
+	text-align: center;
+	height: 200px;
+}
+#footer{
+	margin-top: 5px;
+	padding-top: 2px;
+	background-color: black;
+	color: #fff;
+}

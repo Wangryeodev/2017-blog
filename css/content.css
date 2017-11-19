@@ -1,0 +1,28 @@
+#content{
+	padding-left: 20px;
+	margin-top: 20px;
+	color: black;
+	min-height: 300px;
+}
+a{
+	color: #e74c3c;
+}
+a:hover{
+	color: #e74c3c;
+}
+a:visited{
+	color: #e74c3c;
+}	
+a:active{
+	color: #e74c3c;
+}
+p{
+	font-size: 130%;
+}
+.tagYear::before{
+	color: #CCC;
+	margin-left: -20px;
+	margin-right: 10px;
+	font-weight: bold;
+	content: "#";
+}

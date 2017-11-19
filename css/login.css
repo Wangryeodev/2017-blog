@@ -1,0 +1,53 @@
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.mess{
+  text-align: center;
+}
+.tieuDe{
+  text-align: center;
+}
+.note{
+  text-align: center;
+  font-weight: bold;
+  border-style: dotted;
+  border-color: #ff4d4d;
+  z-index: 200;
+}
+#loginButton{
+  background-color: #242424;
+  color: #fff;
+}
+#loginNote{
+  text-align: center;
+}

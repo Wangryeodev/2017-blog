@@ -1,0 +1,22 @@
+#postTitle::before{
+	color: #CCC;
+	content: "#";
+	margin-left: -20px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+#postContent{
+	text-align: justify;
+}
+#postInfo{
+	text-align: left;
+	font-size: 16px;
+	font-style: italic;
+}
+#postAuthor::before{
+	color: black;
+	content: " | by ";
+}
+#fullPost{
+	min-height: 250px;
+}

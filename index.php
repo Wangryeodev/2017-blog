@@ -1,0 +1,12 @@
+<?php 
+	require('templates/header.php');
+	require('templates/topbar.php');
+?>
+		<?php 
+			require('templates/home_content.php');
+		?>
+<?php
+	require('templates/footer.php');
+?>
+</body>
+</html>
