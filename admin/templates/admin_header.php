@@ -1,11 +1,19 @@
-<?php 
-	session_start();
-?>
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>Trang quản lý</title>
+		<?php
+			if(isset($_GET["edit_target"])){
+				echo "<title>Trang chỉnh sửa bài viết</title>";
+			}
+			else if(isset($_GET["target"])){
+				echo "<title>Trang xóa bài viết</title>";
+			}
+			else
+			{
+				echo "<title>Trang quản lý</title>";
+			}
+		?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
@@ -15,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="css/user.css">
 	<link rel="stylesheet" type="text/css" href="css/post_manage.css">
 	<link rel="stylesheet" type="text/css" href="css/register.css">
-	<script type="text/javascript" src="../lib/ckeditor/ckeditor.js"></script>
+	<script src="../lib/ckeditor/ckeditor.js"></script>
 	<script language="javascript">
 		function show_mess()
 		{

@@ -6,8 +6,8 @@
 				require('lib/connect.php');
 				// Truy vấn
 				$getData = "SELECT `title`, `content`, `date_post`, `author` FROM `post` WHERE `post_id`='$id'";
-				$result = mysql_query($getData) or die('Lấy dữ liệu lỗi');
-				$dataPost = mysql_fetch_assoc($result);
+				$result = mysqli_query($conn, $getData) or die('Lấy dữ liệu lỗi');
+				$dataPost = mysqli_fetch_assoc($result);
 				$newDate = date("d/m/Y", strtotime($dataPost['date_post'])); // chuyển định dạng ngày
 				echo"<hr>";
 				echo"<h2 id='postTitle'>$dataPost[title]</h2>";
@@ -19,7 +19,7 @@
 					echo"<span id='postAuthor'>$dataPost[author]</span>";
 				echo"</div>";
 				// Đóng Database
-				mysql_close($conn);
+				mysqli_close($conn);
 				?>
 			</div>
 		</div>

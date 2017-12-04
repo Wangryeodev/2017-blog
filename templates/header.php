@@ -5,10 +5,10 @@
 	<?php 
 		if (isset($id)) {
 			require('lib/connect.php');
-			$result = mysql_query("select title from post where post_id='$id'");
-			$data = mysql_fetch_array($result);
+			$result = mysqli_query($conn,"select title from post where post_id='$id'");
+			$data = mysqli_fetch_array($result);
 			echo "<title>$data[0]</title>";
-			mysql_close($conn);
+			mysqli_close($conn);
 		}
 		else
 		{

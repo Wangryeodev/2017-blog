@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if (isset($_SESSION['username']) && isset($_SESSION['level']) >= 2) {
+  if (isset($_SESSION['username']) && isset($_SESSION["level"]) && $_SESSION["level"] >= 2) {
     require('templates/admin_header.php');
 ?>
 <!-- Content -->
@@ -24,9 +24,9 @@
             require('../lib/connect.php');
           // Truy Vấn
             $query = "select username, email, fullname, gender, level from user";
-            $query_result = mysql_query($query) or die('Không nhận được dữ liệu từ máy chủ!');
+            $query_result = mysqli_query($conn,$query) or die('Không nhận được dữ liệu từ máy chủ!');
             $stt = 0;
-            while($data = mysql_fetch_assoc($query_result))
+            while($data = mysqli_fetch_assoc($query_result))
             {
       				echo"<tr>";
                 ++$stt;
@@ -47,7 +47,7 @@
       				echo"</tr>";
             }
           // Đóng database
-            mysql_close($conn);
+            mysqli_close($conn);
   				?>
   			</table>
 		</div>

@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	if (isset($_SESSION['username']) && isset($_SESSION['level']) && $_SESSION['level']>= 2) {
 	require('templates/admin_header.php');
 	if (isset($_POST["post"])) {
 		// Kiểm tra xem có tiêu đề chưa
@@ -36,25 +37,32 @@
 		// Nếu lớn hơn thì tạo 1 năm mói
 			$yearCheck = date("Y", strtotime($date));
 			// Kết nối SQL, tìm max trong table year
-			$resultMaxYear = mysql_query("SELECT MAX(year) FROM year");
-			$maxYear = mysql_fetch_array($resultMaxYear);
+			$resultMaxYear = mysqli_query($conn,"SELECT MAX(year) FROM year");
+			$maxYear = mysqli_fetch_array($resultMaxYear, MYSQLI_NUM);
 			// So Sánh
 			if ($yearCheck > $maxYear[0]) {
 				$AddYear = "INSERT INTO `year` (`year_id`, `year`) VALUES (NULL, '$yearCheck')";
-				mysql_query($AddYear);
+				mysqli_query($conn,$AddYear);
 			}
 		// lấy riêng năm
 			$year = date('Y');
 		if ($title && $content) {
 			// Request
-			mysql_query("INSERT INTO post(title, content, date_post, year, author) VALUES ('$title','$content','$date','$year','$author')") or die('Ghi lỗi');
+			$write = "INSERT INTO post(title, content, date_post, year, author) VALUES ('$title','$content','$date','$year','$author')";
+			mysqli_query($conn, $write) or die('Ghi lỗi');
 			// Close database
 			$_SESSION["post_status"] = "Đăng thành công";
+			mysqli_close($conn);
 			if (isset($_SESSION["post_status"])) {
 				unset($_SESSION["post_status"]);
 			}
 			header('location: post-manage.php');
 		}
+	}
+}
+else
+	{
+		header('Location: ../index.php');
 	}
 ?>
 	<div class="col-md-8 col-md-offset-2" id="add_post">
@@ -68,8 +76,8 @@
 				<label >Nội dung</label>
 			  	<textarea class="form-control" name="txtContent" rows="15"></textarea>
 			  	<script>
-                CKEDITOR.replace( 'txtContent' );
-            </script>
+                CKEDITOR.replace('txtContent');
+            	</script>
 			</div>
 			  	<button type="submit" name="post" class="btn btn-default">Đăng</button>
 		</form>

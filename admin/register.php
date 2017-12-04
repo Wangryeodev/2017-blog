@@ -1,65 +1,70 @@
-<?php 
-	require('templates/admin_header.php');
-?>
-<?php 
+<?php
+	session_start();
+	if (isset($_SESSION['username']) && isset($_SESSION['level']) && $_SESSION['level']>= 2) {
+	require('templates/admin_header.php'); 
 	//Xử lý
-session_start();
-if (isset($_POST['register'])) 
-{
-    //Kết nối tới database
-    include('../lib/connect.php');
-     
-    //Lấy dữ liệu nhập vào
-    $username = addslashes($_POST['txtRegUserName']);
-    $password = addslashes($_POST['txtRegPassWord']);
-    $email = addslashes($_POST['txtRegEmail']);
-    $fullname = addslashes($_POST['txtRegFullName']);
-    $gender_temp = 1;
-    $level_temp = 1;
-    if ($_POST['genderPicker'] == 1) {
-    	$gender_temp = 1;
-    }
-    else
-    {
-    	$gender_temp = 2;
-    }
-    if ($_POST['levelPicker'] == 1) {
-    	$level_temp = 1;
-    }
-    else
-    {
-    	$level_temp = 2;
-    }
-    $gender = $gender_temp;
-    $level = $level_temp;
-    
-    //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
-    if (!$username || !$password || !$email || !$fullName) {
-        $_SESSION["regStatus"] = "Hãy nhập đủ thông tin đăng nhập!";
-        header('Location: register.php');
-    }
-	    // mã hóa pasword
-	    $password = md5($password);
+	if (isset($_POST['register'])) 
+	{
+	    //Kết nối tới database
+	    include('../lib/connect.php');
 	     
-	    //Kiểm tra tên đăng nhập có tồn tại không
-	    $query = mysql_query("SELECT * FROM user WHERE username='$username'");
-	    $row = mysql_fetch_array($query);
-	    if (mysql_num_rows($query) == 0) {
-	     mysql_query("INSERT INTO user(user_id, username, password, email, fullname, gender, level) VALUES (1,'$username','$password','$email','$fullname',1,2)") or die('Không đăng kí được');
-	     mysql_query($reg) or die('Không đăng kí được');
-	     // Xoa Session thong bao
-	    if (isset($_SESSION['regStatus'])) {
-			unset($_SESSION['regStatus']);
-			}
-	     header('Location: user-manage.php');
-	 	}
-	 	else
-	 	{
-	 		$_SESSION["regStatus"] = "Tên đăng nhập đã tồn tại!";
+	    //Lấy dữ liệu nhập vào
+	    $username = addslashes($_POST['txtRegUserName']);
+	    $password = addslashes($_POST['txtRegPassWord']);
+	    $email = addslashes($_POST['txtRegEmail']);
+	    $fullname = addslashes($_POST['txtRegFullName']);
+	    $gender_temp = 1;
+	    $level_temp = 1;
+	    if ($_POST['genderPicker'] == 1) {
+	    	$gender_temp = 1;
+	    }
+	    else
+	    {
+	    	$gender_temp = 2;
+	    }
+	    if ($_POST['levelPicker'] == 1) {
+	    	$level_temp = 1;
+	    }
+	    else
+	    {
+	    	$level_temp = 2;
+	    }
+	    $gender = $gender_temp;
+	    $level = $level_temp;
+	    
+	    //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
+	    if (!$username || !$password || !$email || !$fullname) {
+	        $_SESSION["regStatus"] = "Hãy nhập đủ thông tin đăng nhập!";
 	        header('Location: register.php');
-	 	}
-}
-	mysql_close($conn);
+	    }
+		    // mã hóa pasword
+		    $password = md5($password);
+		     
+		    //Kiểm tra tên đăng nhập có tồn tại không
+		    $check_username = "SELECT * FROM user WHERE username='$username'";
+		    $query = mysqli_query($conn, $check_username);
+		    $row = mysqli_fetch_array($query);
+		    if (mysqli_num_rows($query) == 0) {
+		    	$reg = "INSERT INTO user(username, password, email, fullname, gender, level) VALUES ('$username','$password','$email','$fullname',$gender_temp,$level_temp)";
+		     mysqli_query($conn, $reg) or die('Không đăng kí được');
+		     // Xoa Session thong bao
+		    if (isset($_SESSION['regStatus'])) {
+				unset($_SESSION['regStatus']);
+				}
+		     header('Location: user-manage.php');
+		 	}
+		 	else
+		 	{
+		 		$_SESSION["regStatus"] = "Tên đăng nhập đã tồn tại!";
+		        header('Location: register.php');
+		 	}
+		 mysqli_close($conn);
+		}
+	}
+	else
+	{
+		header('Location: ../index.php');
+	}
 ?>
 	<div class="col-md-8 col-md-offset-2" id="registerForm">
 		<form action="register.php?do=register" method="POST">

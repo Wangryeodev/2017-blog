@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if (isset($_SESSION['username']) && isset($_SESSION['level']) >= 2) {
+  if (isset($_SESSION['username']) && isset($_SESSION['level']) && $_SESSION['level'] >= 2) {
     require('templates/admin_header.php');
 ?>
 		<!-- begin content -->

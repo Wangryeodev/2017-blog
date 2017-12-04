@@ -32,9 +32,9 @@ if (isset($_POST['login']))
     $password = md5($password);
      
     //Kiểm tra tên đăng nhập có tồn tại không
-    $query = mysql_query("SELECT * FROM user WHERE username='$username'");
-     $row = mysql_fetch_array($query);
-    if (mysql_num_rows($query) == 0) {
+    $query = mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
+     $row = mysqli_fetch_array($query);
+    if (mysqli_num_rows($query) == 0) {
         $_SESSION["status"] = "Thất bại! Tên đăng nhập không tồn tại!";
         header('Location: login.php');
     }
@@ -53,6 +53,6 @@ if (isset($_POST['login']))
 	            header('Location: admin');
 	    }
     }
+    mysqli_close($conn);
 }
-mysql_close($conn);
 ?>
