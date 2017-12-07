@@ -43,12 +43,12 @@
                   $showLevel = "Bình thường";
                 }
       					echo"<td>$showLevel</td>";
-                if ($_SESSION["level"] < $data['level'] ) {
-                    $canDelete = FALSE;
+                if ($_SESSION["level"] > $data['level'] ) {
+                    $canDelete = TRUE;
                 }
                 else
                 {
-                    $canDelete = TRUE;
+                    $canDelete = FALSE;
                 }
                 if ($canDelete) {
       					echo"<td><a href='delete-user.php?target=$data[username]' onclick='return show_mess();'><span class='deleteBtn'>Delete</span></a></td>";
