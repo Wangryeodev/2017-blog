@@ -1,9 +1,19 @@
-<?php 
+<?php
+	session_start();
 	require('templates/header.php');
 	require('templates/topbar.php');
 ?>
-		<?php 
-			require('templates/home_content.php');
+		<?php
+			if (isset($_SESSION['username'])) {
+				require('templates/home_content.php');
+			}
+			else
+			{
+				require('templates/home_content_not_show.php');
+				if(isset($_SESSION['status'])){
+					unset($_SESSION['status']);
+				}
+			}
 		?>
 <?php
 	require('templates/footer.php');

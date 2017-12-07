@@ -3,6 +3,7 @@
 			<span>&copy; Created by Le Van Vuong</span> |
 			<a href="login.php"><span class="footerTagA glyphicon glyphicon-user" aria-hidden="true"></span></a>
 			<?php
+
 				if (isset($_SESSION['username'])) {
 					echo " | ";
 					echo"<a href='logout.php'><span class='footerTagA glyphicon glyphicon-off' aria-hidden='true'></span></a>";

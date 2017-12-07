@@ -19,10 +19,8 @@
 	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-	<link rel="stylesheet" type="text/css" href="css/user.css">
-	<link rel="stylesheet" type="text/css" href="css/post_manage.css">
-	<link rel="stylesheet" type="text/css" href="css/register.css">
+	<link rel="stylesheet" type="text/css" href="css/admin.min.css">
+	<link rel="stylesheet" type="text/css" href="css/adminPageFunctions.min.css">
 	<script src="../lib/ckeditor/ckeditor.js"></script>
 	<script language="javascript">
 		function show_mess()

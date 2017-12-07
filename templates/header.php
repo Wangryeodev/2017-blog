@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -20,10 +21,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="css/topBar.css">
-	<link rel="stylesheet" type="text/css" href="css/content.css">
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
-	<link rel="stylesheet" type="text/css" href="css/post.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>

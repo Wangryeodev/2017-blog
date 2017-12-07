@@ -1,0 +1,196 @@
+/* Top bar css (topbar.css) */
+body{
+	font-family: 'Inconsolata', monospace;
+}
+#bigMomContainer{
+	padding-left: 0;
+	padding-right: 0;
+}
+#topBar{
+	background-color: #fafafa;
+	margin: 0;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	box-shadow:0 1px 2px #a9b2b2;
+    -webkit-box-shadow:0 1px 2px #a9b2b2;
+    -moz-box-shadow:0 1px 2px #a9b2b2;
+}
+#title{
+		font-weight: bold;
+}
+#bossLogo{
+	height: 100px;
+	width: 100px;
+	padding: 2px;
+	border-radius:50%;
+	border: 4px solid black;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+}
+.hashtag{
+	margin-bottom: 2px;
+	padding: 2px;
+	font-size: 120%;
+	color: black;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+.hashtag:hover{
+	color: #fff;
+	background-color: black;
+}
+#motherTagA{
+	color: black;
+}
+#motherTagA:hover{
+	color: black;
+}
+#motherTagA:active{
+	color: black;
+}
+#motherTagA:visited{
+	color: black;
+}
+
+/* End topbar */
+
+/* Content Css (content.css old file) */
+#content{
+	padding-left: 20px;
+	margin-top: 20px;
+	color: black;
+	min-height: 300px;
+}
+a{
+	color: #e74c3c;
+}
+a:hover{
+	color: #e74c3c;/* #e74c3c */
+}
+a:visited{
+	color: #e74c3c;/* #e74c3c */
+}	
+a:active{
+	color: #e74c3c;/* #e74c3c */
+}
+p{
+	font-size: 130%;
+}
+.tagYear::before{
+	color: #CCC;
+	margin-left: -20px;
+	margin-right: 10px;
+	font-weight: bold;
+	content: "#";
+}
+
+/* Content not show */
+#content_notshow{
+	min-height: 300px;
+	padding-top: 20px;
+}
+#message_div{
+	border-style: dotted;
+    border-width: 3px;
+    border-color: #1b222d;
+}
+.message_content{
+	text-align: center;
+	color: #1b222d;
+}
+
+/* end content not show */
+/* End content */
+
+/* Post css (post.css old file) */
+#postTitle::before{
+	color: #CCC;
+	content: "#";
+	margin-left: -20px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+#postContent{
+	text-align: justify;
+}
+#postInfo{
+	text-align: left;
+	font-size: 16px;
+	font-style: italic;
+}
+#postAuthor::before{
+	color: black;
+	content: " | by ";
+}
+#fullPost{
+	min-height: 250px;
+}
+/* End css Post */
+
+/* Footer css (footer.css old file) */
+#footer{
+	margin-top: 50px;
+	background-color: #242424;
+	color: #fff;
+}
+.footerTagA{
+	color: #fff;
+
+/* End footer */
+
+/* Login css (login.css) */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.mess{
+  text-align: center;
+}
+.tieuDe{
+  text-align: center;
+}
+.note{
+  text-align: center;
+  font-weight: bold;
+  border-style: dotted;
+  border-color: #ff4d4d;
+  z-index: 200;
+}
+#loginButton{
+  background-color: #242424;
+  color: #fff;
+}
+#loginNote{
+  text-align: center;
+}
+/* End login file */

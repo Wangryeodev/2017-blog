@@ -1,0 +1,78 @@
+/* 
+	Tac gia: le Van Vuong;
+*/
+/* Post manage page css (post_manage.css)*/
+#user_table{
+	margin-top: 20px;
+}
+#newPostBtn{
+	margin-top: 10px;
+	background-color: black;
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid black;
+	height: 25px;
+	padding: 2px;
+}
+#postContent{
+	padding-top: 10px;
+}
+.tbTitle{
+	background-color: #2a313d;
+}
+/* End post manage css*/
+/* Register page css (register.css)*/
+#registerForm{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+/* End register.css*/
+/* User manage page css(user.css)*/
+
+#admin_content{
+	min-height: 470px;
+}
+#userContent{
+	margin-top: 5px;
+}
+#user_table{
+	text-align: center;
+}
+#tbTopLine{
+	font-size: 120%;
+	font-weight: bold;
+}
+#tbUserID{
+	width: 40px;
+}
+#tbUserName{
+	width: 80px;
+}
+#tbFullname{
+	width: 100px;
+}
+#tbEmail{
+	width: 100px;
+}
+#tbLevel{
+	width: 30px;
+}
+#tbDelete{
+	width: 30px;
+}
+.deleteBtn{
+	color: black;
+}
+.deleteBtn:hover{
+	color: black;
+}
+#newUserBtn{
+	margin-top: 10px;
+	background-color: black;
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid black;
+	height: 25px;
+	padding: 2px;
+}
+/* End user page*/

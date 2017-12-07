@@ -43,7 +43,20 @@
                   $showLevel = "Bình thường";
                 }
       					echo"<td>$showLevel</td>";
+                if ($_SESSION["level"] < $data['level'] ) {
+                    $canDelete = FALSE;
+                }
+                else
+                {
+                    $canDelete = TRUE;
+                }
+                if ($canDelete) {
       					echo"<td><a href='delete-user.php?target=$data[username]' onclick='return show_mess();'><span class='deleteBtn'>Delete</span></a></td>";
+                }
+                else
+                {
+                  echo "<td>Can't Delete</td>";
+                }
       				echo"</tr>";
             }
           // Đóng database
